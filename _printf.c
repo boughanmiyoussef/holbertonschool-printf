@@ -1,43 +1,59 @@
 #include "main.h"
+#include <stdarg.h>
 #include <unistd.h>
+
 /**
- * _printf - function name.
- *
- * @format: Format of specifier.
- *
- * Return: int.
+ * _printf - Emulate the original printf function.
+ * @format: Format string.
+ * Return: Number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-    int count = 0;
     va_list args;
+    int count = 0;
 
-    va_start(args, format);
     if (!format)
         return (-1);
+
+    va_start(args, format);
 
     while (*format)
     {
         if (*format == '%')
         {
-            if (*(format + 1) == '%')
+            format++;
+            if (*format == '\0')
+                return (-1);
+
+            if (*format == 'c')
+            {
+                count += _putchar(va_arg(args, int));
+            }
+            else if (*format == 's')
+            {
+                char *s = va_arg(args, char *);
+                if (s == NULL)
+                    s = "(null)";
+                while (*s)
+                {
+                    count += _putchar(*s);
+                    s++;
+                }
+            }
+            else
             {
                 count += _putchar('%');
-                format += 2;
-                continue;
+                count += _putchar(*format);
             }
-            count += handle_specifier(*(format + 1), args);
-            format += 2;
         }
         else
         {
             count += _putchar(*format);
-            format++;
         }
+        format++;
     }
 
     va_end(args);
+
     return (count);
 }
-
-
