@@ -30,5 +30,5 @@ int handle_specifier(char format_specifier, va_list args)
         i++;
     }
 
-    return _putchar('%') + _putchar(format_specifier);
+return _putchar('%') + _putchar(format_specifier);
 }
