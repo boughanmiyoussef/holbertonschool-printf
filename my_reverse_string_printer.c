@@ -17,13 +17,13 @@ while (s[i])
 {
 i++;
 }
-	
+
 while (i >= 0)
 {
 j += _putchar(s[i]);
 i--;
 }
-	
+
 j--;
 return (j);
 }

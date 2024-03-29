@@ -33,7 +33,7 @@ break;
 j += handle_specifier(format[i + 1], args);
 if (j == 0)
 count += _putchar(format[i + 1]);
-	
+
 if (j == -1)
 count = -1;
 i++;

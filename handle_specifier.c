@@ -37,5 +37,5 @@ j += _putchar('%');
 j += _putchar(format_specifier);
 }
 
- return (j);
+return (j);
 }
