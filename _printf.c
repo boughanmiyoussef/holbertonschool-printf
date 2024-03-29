@@ -25,7 +25,11 @@ int _printf(const char *format, ...)
             if (*format == '\0')
                 return (-1);
 
-            if (*format == 'c')
+            if (*format == '%')
+            {
+                count += _putchar('%');
+            }
+            else if (*format == 'c')
             {
                 count += _putchar(va_arg(args, int));
             }
