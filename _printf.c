@@ -9,46 +9,35 @@
  */
 int _printf(const char *format, ...)
 {
+    int count = 0;
+    va_list args;
 
-int i = 0, count = 0, j;
-va_list args;
+    va_start(args, format);
+    if (!format)
+        return (-1);
 
-va_start(args, format);
-if (!format || (format[0] == '%' && !format[1]))
-return (-1);
+    while (*format)
+    {
+        if (*format == '%')
+        {
+            if (*(format + 1) == '%')
+            {
+                count += _putchar('%');
+                format += 2;
+                continue;
+            }
+            count += handle_specifier(*(format + 1), args);
+            format += 2;
+        }
+        else
+        {
+            count += _putchar(*format);
+            format++;
+        }
+    }
 
-if (format[0] == '%' && format[1] == ' ' && !format[2])
-return (-1);
-
-while (format[i])
-{
-j = 0;
-if (format[i] == '%')
-{
-if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
-{
-count = -1;
-break;
+    va_end(args);
+    return (count);
 }
-j += handle_specifier(format[i + 1], args);
-if (j == 0)
-count += _putchar(format[i + 1]);
 
-if (j == -1)
-count = -1;
-i++;
-}
 
-else
-{
-(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
-}
-i++;
-
-if (count != -1)
-count += j;
-
-}
-va_end(args);
-return (count);
-}
