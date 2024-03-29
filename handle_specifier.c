@@ -25,7 +25,7 @@ while (format_handlers[i].specifier != 0)
 {
 if (format_specifier == format_handlers[i].specifier)
 {
-j += format_handlers[i].f(args); 
+j += format_handlers[i].f(args);
 break;
 }
 i++;
