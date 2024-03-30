@@ -1,6 +1,5 @@
 #include "main.h"
 #include <unistd.h>
-
 /**
  * my_int_printer - print integers.
  *
