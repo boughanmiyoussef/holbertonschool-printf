@@ -45,5 +45,3 @@ Prints an unsigned hexadecimal integer (\fB%x\fR uses lowercase letters, \fB%X\f
 
 .SH AUTHOR
 Youssef Boughanmi
-
-Updated manual page with AUTHOR section----commit 
