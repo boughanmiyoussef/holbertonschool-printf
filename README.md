@@ -1,27 +1,52 @@
 # Custom Printf Implementation
 
-## Description
-
 This project implements a custom printf function in C, providing functionality similar to the standard printf function available in the C standard library.
 
-### Format Specifiers:
+## Description
 
-- **%c**: This specifier is used to print a single character. It expects an `int` argument which represents the ASCII value of the character to be printed.
+The main.h file contains the declarations of functions and structures necessary for the implementation of the custom printf function.
 
-- **%s**: The %s specifier is used to print strings. It expects a `char *` argument, which is the pointer to the string to be printed.
+The handle_specifier.c file implements the function responsible for handling format specifiers and invoking corresponding printer functions.
 
-- **%d and %i**: Both %d and %i specifiers are used to print integers. They expect an `int` argument.
+The my_char_printer.c file implements the function to print a single character.
 
-- **%r**: This is a custom specifier implemented in this project. It prints a string in reverse order. It expects a `char *` argument, which is the pointer to the string to be printed.
+The my_int_printer.c file implements the function to print integers.
 
-- **%%**: The %% specifier is used to print a literal % symbol.
+The my_string_printer.c file implements the function to print strings.
 
-Each specifier corresponds to a specific printer function:
+The my_reverse_string_printer.c file implements the function to print strings in reverse.
 
-- %c corresponds to `my_char_printer`
-- %s corresponds to `my_string_printer`
-- %d and %i correspond to `my_int_printer`
-- %r corresponds to `my_reverse_string_printer`
-- %% is handled directly within the `_printf` function.
+The main.c file contains test cases to verify the functionality of the custom printf function.
 
-These specifiers allow for flexible and customizable formatting of output within the custom printf function.
+The _putchar.c file implements the function to write a character to the standard output.
+
+## Format Specifiers
+
+- `%c`: Print a single character.
+- `%s`: Print a string.
+- `%%`: Print a percent sign.
+- `%d`, `%i`: Print signed integers.
+- `%r`: Print a string in reverse.
+
+## Project Requirements
+
+- All files will be compiled on Ubuntu 14.04 LTS.
+- Programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic.
+- Code should use the Betty style.
+- No usage of global variables.
+- Authorized functions and macros include:
+  - `write` (man 2 write)
+  - `malloc` (man 3 malloc)
+  - `free` (man 3 free)
+  - `va_start` (man 3 va_start)
+  - `va_end` (man 3 va_end)
+  - `va_copy` (man 3 va_copy)
+  - `va_arg` (man 3 va_arg)
+
+## Notes
+
+- The program does not handle buffer handling, flag characters, field width, precision, or length modifiers.
+
+## Author
+
+Youssef Boughanmu
