@@ -1,6 +1,5 @@
 #include "main.h"
 #include <unistd.h>
-
 /**
  * my_char_printer - function name
  *
