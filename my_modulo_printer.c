@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
- * my_modulo_printer - print %.
+ * my_modulo_printer - function name.
  *
  * @args: arguments.
  *
- * Return: count of chars.
+ * Return: int of chars.
  */
 
 int my_modulo_printer(va_list args)
