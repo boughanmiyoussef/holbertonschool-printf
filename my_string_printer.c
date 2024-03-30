@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * my_string_printer - print string.
+ * my_string_printer - function name.
  *
  * @args: argument.
  *
