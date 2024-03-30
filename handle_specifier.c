@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * handle_specifier - Handle format specifier and call corresponding function.
  * @format_specifier: The format specifier to handle.
