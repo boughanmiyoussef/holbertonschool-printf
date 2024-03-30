@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-
 /**
  * _printf - Emulate the original printf function.
  * @format: Format string.
@@ -11,21 +10,16 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
-
 if (!format)
 return (-1);
-
 va_start(args, format);
-
 while (*format)
 {
 if (*format == '%')
 {
 format++;
-
 if (*format == '\0')
 return (-1);
-
 if (*format == '%')
 {
 count += _putchar('%');
@@ -57,8 +51,6 @@ count += _putchar(*format);
 }
 format++;
 }
-
 va_end(args);
-
 return (count);
 }
