@@ -49,4 +49,4 @@ The _putchar.c file implements the function to write a character to the standard
 
 ## Author
 
-Youssef Boughanmu
+Youssef Boughanmi
