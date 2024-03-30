@@ -2,30 +2,23 @@ Custom Printf Implementation
 This project implements a custom printf function in C, providing functionality similar to the standard printf function available in the C standard library.
 
 Description
-The custom printf function is implemented in the _printf.c file, which serves as the main entry point for the printf functionality. It utilizes various helper functions to handle different format specifiers and print corresponding output.
+The custom printf function is implemented in the _printf function within the printf.c file. It accepts a format string along with optional arguments and prints formatted output to the standard output.
 
-Files
-main.h: Contains declarations of functions and structures necessary for the implementation of the custom printf function.
+Format Specifiers:
+%c: This specifier is used to print a single character. It expects an int argument which represents the ASCII value of the character to be printed.
 
-handle_specifier.c: Implements the function responsible for handling format specifiers and invoking corresponding printer functions.
+%s: The %s specifier is used to print strings. It expects a char * argument, which is the pointer to the string to be printed.
 
-my_char_printer.c: Implements the function to print a single character ('%c' specifier).
+%d and %i: Both %d and %i specifiers are used to print integers. They expect an int argument.
 
-my_int_printer.c: Implements the function to print integers ('%d' and '%i' specifiers).
+%r: This is a custom specifier implemented in this project. It prints a string in reverse order. It expects a char * argument, which is the pointer to the string to be printed.
 
-my_string_printer.c: Implements the function to print strings ('%s' specifier).
+%%: The %% specifier is used to print a literal % symbol.
 
-my_reverse_string_printer.c: Implements the function to print strings in reverse ('%r' specifier).
+Each specifier corresponds to a specific printer function:
 
-_putchar.c: Implements the function to write a character to the standard output.
-
-main.c: Contains test cases to demonstrate the usage of the custom printf function.
-
-Format Specifiers
-%c: Prints a single character. Corresponding function: my_char_printer.
-
-%d and %i: Prints signed integers. Corresponding function: my_int_printer.
-
-%s: Prints null-terminated strings. Corresponding function: my_string_printer.
-
-%r: Prints strings in reverse. Corresponding function: my_reverse_string_printer.
+%c corresponds to my_char_printer
+%s corresponds to my_string_printer
+%d and %i correspond to my_int_printer
+%r corresponds to my_reverse_string_printer
+%% is handled directly within the _printf function.
