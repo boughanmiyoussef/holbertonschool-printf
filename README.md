@@ -46,7 +46,3 @@ The _putchar.c file implements the function to write a character to the standard
 ## Notes
 
 - The program does not handle buffer handling, flag characters, field width, precision, or length modifiers.
-
-## Author
-
-Youssef Boughanmi
