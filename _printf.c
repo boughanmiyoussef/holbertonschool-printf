@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * _printf - Emulate the original printf function.
  * @format: Format string.
@@ -10,7 +8,6 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
-
 if (!format)
 return (-1);
 
