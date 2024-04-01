@@ -1,11 +1,9 @@
 #include "main.h"
-#include <unistd.h>
 /**
  * my_int_printer - print integers.
  * @args: argument.
  * Return: count of chars.
  */
-
 int my_int_printer(va_list args)
 {
 int abc = 1;
