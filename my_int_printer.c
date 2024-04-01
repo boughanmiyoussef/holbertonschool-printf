@@ -2,9 +2,7 @@
 #include <unistd.h>
 /**
  * my_int_printer - print integers.
- *
  * @args: argument.
- *
  * Return: count of chars.
  */
 
@@ -37,6 +35,5 @@ while (abc >= 1)
 j += _putchar(((num / abc) % 10) + '0');
 abc /= 10;
 }
-
 return (j);
 }
